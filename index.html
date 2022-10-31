@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: antiquewhite;
+            color: black;
+            padding: 20px;
+            margin :4px;
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: center;
+            font-size: larger;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        Current time is <span id="clock"></span>
+    </div>
+
+     
+    <script>
+        let time = new Date();
+        console.log(time);
+
+        let timez = new Date(0);
+        console.log(timez);
+
+        let newDate = new Date("2029-09-30");
+        console.log(newDate)
+
+        let newDate2 = new Date(2001, 11, 14, 20, 00, 00);
+        console.log(newDate2);
+
+        let yr = newDate2.getFullYear();
+        console.log("The year is ", yr);
+
+        let mon = newDate2.getMonth();
+        console.log("The month is ", mon);
+
+        let date = newDate2.getDate();
+        console.log("The date is ", date);
+
+        let hour = newDate2.getHours();
+        console.log("The hours is ", hour);
+
+        let min = newDate2.getMinutes();
+        console.log("The minute is ", min);
+
+        newDate2.setDate(8); //set year, month, hour, day, min, sec also available
+        console.log(newDate2);
+
+        newDate2.setDate(-9 * 28);//It automatically add the date according to the days in a month
+        console.log(newDate2);
+
+        let total_time = Date.now()  //Total number fo time from 1 jan 1970 in millisec
+        console.log(total_time);
+
+        newDate.setDate(8);
+        newDate.setMinutes(29);
+        newDate.setMonth(2);
+        console.log(newDate)
+        
+        setInterval(updateTime, 1000);
+
+        function updateTime() {
+            clock.innerHTML = new Date();
+        }
+
+    </script>
+</body>
+
+</html>
